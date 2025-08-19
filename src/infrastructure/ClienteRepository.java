@@ -4,10 +4,16 @@
  */
 package infrastructure;
 
+import domain.Cliente;
+
 /**
  *
  * @author User
  */
 public class ClienteRepository {
+
+    public static void guardar(Cliente c) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

@@ -4,14 +4,26 @@
  */
 package application;
 
-/**
- *
- * @author User
- */
-public class ClienteService {
+import javax.swing.JOptionPane;
+import domain.Cliente;
+import infrastructure.ClienteRepository;
+import utils.CryptoUtils;
 
+public class ClienteService {
     public static void mostrarMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String nombre = JOptionPane.showInputDialog("Nombre del cliente:");
+        String id = JOptionPane.showInputDialog("ID interno:");
+        String correo = JOptionPane.showInputDialog("Correo:");
+        String telefono = JOptionPane.showInputDialog("Teléfono:");
+        String cedula = JOptionPane.showInputDialog("Cédula:");
+
+        try {
+            String cifrada = CryptoUtils.cifrar(cedula);
+            Cliente c = new Cliente(id, nombre, correo, telefono, cifrada);
+            ClienteRepository.guardar(c);
+            JOptionPane.showMessageDialog(null, "Cliente guardado.");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al cifrar cédula.");
+        }
     }
-    
 }

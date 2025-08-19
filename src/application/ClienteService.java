@@ -9,5 +9,9 @@ package application;
  * @author User
  */
 public class ClienteService {
+
+    public static void mostrarMenu() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }
